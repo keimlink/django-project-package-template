@@ -1,0 +1,5 @@
+graft src/{{ project_name }}
+prune src/{{ project_name }}/media
+prune src/{{ project_name }}/static_root
+prune .github
+global-exclude *.py[co]
