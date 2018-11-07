@@ -9,6 +9,7 @@ The project has a layout so that it can be build as a [wheel](https://github.com
 
 *   `setup()` is configured using a [`setup.cfg` file](https://setuptools.readthedocs.io/en/latest/setuptools.html#configuring-setup-using-setup-cfg-files).
 *   The version is defined in `{{ project_name }}.__version__`.
+*   Source code is located in a `src` directory to avoid side effects.
 *   All apps use the `{{ project_name }}.apps` namespace.
 *   All configuration modules use the `{{ project_name }}.conf` namespace.
 *   `{{ project_name }}.conf.settings` uses [`pathlib`](https://docs.python.org/3.7/library/pathlib.html) instead of `os` and `os.path`.
