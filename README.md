@@ -22,7 +22,7 @@ The project has a layout so that it can be build as a [wheel](https://github.com
 Use the following [startproject](https://docs.djangoproject.com/en/stable/ref/django-admin/#django-admin-startproject) command to create a new project using this template:
 
 ```console
-python -m django startproject --extension=cfg,in,md \
+python -m django startproject --extension=cfg,gitignore,gitkeep,in,md,sublime-project \
     --template=https://github.com/keimlink/django-project-package-template/archive/master.zip \
     name [directory]
 ```
