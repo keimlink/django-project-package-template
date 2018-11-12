@@ -9,13 +9,15 @@ The project has a layout so that it can be build as a [wheel](https://github.com
 
 *   `setup()` is configured using a [`setup.cfg` file](https://setuptools.readthedocs.io/en/latest/setuptools.html#configuring-setup-using-setup-cfg-files).
 *   The version is defined in `{{ project_name }}.__version__`.
-*   Source code is located in a `src` directory to avoid side effects.
+*   Source code is located in a `src` directory to prevent side effects.
 *   All apps use the `{{ project_name }}.apps` namespace.
 *   All configuration modules use the `{{ project_name }}.conf` namespace.
 *   `{{ project_name }}.conf.settings` uses [`pathlib`](https://docs.python.org/3.7/library/pathlib.html) instead of `os` and `os.path`.
+*   All static files and locales will be included in the wheel.
 *   All code follows the [Black](https://github.com/ambv/black) code style.
 *   All docstrings follow [PEP 257](https://www.python.org/dev/peps/pep-0257/) conventions.
 *   [Django Debug Toolbar](https://github.com/jazzband/django-debug-toolbar), [IPython](https://ipython.org/) and [check-manifest](https://github.com/mgedmin/check-manifest) are already added to the development dependencies.
+*   A Sublime Text project configuration is already included.
 
 ## Usage
 
