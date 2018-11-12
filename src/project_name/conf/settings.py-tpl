@@ -108,3 +108,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
 STATIC_URL = "/static/"
+
+STATIC_ROOT = str(BASE_DIR.parent.parent / "staticfiles")
+
+STATICFILES_DIRS = (str(BASE_DIR / "static"),)
+
+# Media files (uploaded by a user)
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/files/
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = str(BASE_DIR.parent.parent / "media")
