@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 import pathlib
 
+from envparse import env
+
 # Build paths inside the project like this: str(BASE_DIR / "static")
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 
@@ -18,12 +20,14 @@ BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "{{ secret_key }}"
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="{{ secret_key }}")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DJANGO_DEBUG", cast=bool, default=True)
 
-ALLOWED_HOSTS = []
+# List of strings representing the host/domain names that this site can serve
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", cast=list, default=[])
 
 
 # Application definition
@@ -109,15 +113,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = env("DJANGO_STATIC_URL", default="/static/")
 
-STATIC_ROOT = str(BASE_DIR.parent.parent / "staticfiles")
+STATIC_ROOT = env("DJANGO_STATIC_ROOT", default=str(BASE_DIR.parent.parent / "staticfiles"))
 
 STATICFILES_DIRS = (str(BASE_DIR / "static"),)
 
 # Media files (uploaded by a user)
 # https://docs.djangoproject.com/en/{{ docs_version }}/topics/files/
 
-MEDIA_URL = "/media/"
+MEDIA_URL = env("DJANGO_MEDIA_URL", default="/media/")
 
-MEDIA_ROOT = str(BASE_DIR.parent.parent / "media")
+MEDIA_ROOT = env("DJANGO_MEDIA_ROOT", default=str(BASE_DIR.parent.parent / "media"))

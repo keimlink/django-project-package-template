@@ -13,6 +13,7 @@ The project has a layout so that it can be build as a [wheel](https://github.com
 *   All apps use the `{{ project_name }}.apps` namespace.
 *   All configuration modules use the `{{ project_name }}.conf` namespace.
 *   `{{ project_name }}.conf.settings` uses [`pathlib`](https://docs.python.org/3.7/library/pathlib.html) instead of `os` and `os.path`.
+*   Many settings can be defined using environment variables and parsed with [envparse](https://github.com/rconradharris/envparse).
 *   All templates, static files and locales will be included in the wheel.
 *   All code follows the [Black](https://github.com/ambv/black) code style.
 *   All docstrings follow [PEP 257](https://www.python.org/dev/peps/pep-0257/) conventions.
@@ -72,18 +73,23 @@ Then pass the path to the new directory to the [startapp](https://docs.djangopro
     ```console
     check-manifest
     ```
-1.  [Build](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives) a [wheel](https://github.com/pypa/wheel) of the project.
+3.  [Build](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives) a [wheel](https://github.com/pypa/wheel) of the project.
     ```console
     ./setup.py bdist_wheel
     ```
-1.  Copy the wheel file from the `dist` directory to the server to be deployed.
-2.  Install the wheel and [collect the static files](https://docs.djangoproject.com/en/{{ docs_version }}/ref/contrib/staticfiles/#django-admin-collectstatic):
+4.  Copy the wheel file from the `dist` directory to the server to be deployed.
+5.  Create a minimal configuration on the server using environment variables.
+    ```bash
+    export DJANGO_SETTINGS_MODULE={{ project_name }}.conf.settings
+    export DJANGO_ALLOWED_HOSTS=www.example.com
+    export DJANGO_DEBUG=False
+    ```
+6.  Install the wheel and [collect the static files](https://docs.djangoproject.com/en/{{ docs_version }}/ref/contrib/staticfiles/#django-admin-collectstatic):
     ```console
     python -m pip install --find-links=/path/to/wheel_dir {{ project_name }}
-    export DJANGO_SETTINGS_MODULE={{ project_name }}.conf.settings
     django-project collectstatic --no-input
     ```
-6.  Start Gunicorn like this:
+7.  Start Gunicorn like this:
     ```console
     gunicorn {{ project_name }}.conf.wsgi
     ```
