@@ -68,6 +68,10 @@ Then pass the path to the new directory to the [startapp](https://docs.djangopro
 
 ## Deployment
 
+The following list describes only the absolute necessary steps to outline a deployment for a Django project wheel. For example a component to serve static files is missing - you could use [WhiteNoise](https://github.com/evansd/whitenoise/) to do this.
+
+Also see [How to use Django with Gunicorn](https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/wsgi/gunicorn/) and [Deployment Checklist](https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/checklist/) for more information.
+
 1.  Add your favorite WSGI HTTP server, e.g.  [Gunicorn](https://gunicorn.org/), to `install_requires` in `setup.cfg`.
 2.  [Check](https://github.com/mgedmin/check-manifest) if all files are included in the package:
     ```console
