@@ -32,7 +32,13 @@ python3 -m django startproject --extension=cfg,gitignore,gitkeep,in,md,sublime-p
 
 _Tip: If you want to create the project in your current working directory use `.` as directory argument._
 
-All text below the horizontal line is the template for the new project's README.
+## License
+
+Distributed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
+
+Copyright (c) 2018, Markus Zapke-Gründemann
+
+_All text below the horizontal line is the template for the new project's README._
 
 ---
 {% endcomment %}# {{ project_name|title }}
