@@ -32,6 +32,10 @@ python3 -m django startproject --extension=cfg,gitignore,gitkeep,in,md,sublime-p
 
 _Tip: If you want to create the project in your current working directory use `.` as directory argument._
 
+## Testbed
+
+A testbed to quickly test the project template can be found in the separate [django-project-package-template-testbed](https://github.com/keimlink/django-project-package-template-testbed) repository.
+
 ## License
 
 Distributed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
