@@ -25,7 +25,7 @@ The project has a layout so that it can be build as a [wheel](https://github.com
 Use the following [startproject](https://docs.djangoproject.com/en/stable/ref/django-admin/#django-admin-startproject) command to create a new project using this template:
 
 ```console
-python -m django startproject --extension=cfg,gitignore,gitkeep,in,md,sublime-project \
+python3 -m django startproject --extension=cfg,gitignore,gitkeep,in,md,sublime-project \
     --template=https://github.com/keimlink/django-project-package-template/archive/master.zip \
     name [directory]
 ```
@@ -46,8 +46,8 @@ Install the project and the development dependencies into a [virtual environment
 ```console
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
-python -m pip install --editable .[dev]
+python3 -m pip install --upgrade pip setuptools wheel
+python3 -m pip install --editable .[dev]
 ./manage.py migrate
 ./manage.py runserver
 ```
@@ -90,7 +90,7 @@ Also see [How to use Django with Gunicorn](https://docs.djangoproject.com/en/{{ 
     ```
 6.  Install the wheel and [collect the static files](https://docs.djangoproject.com/en/{{ docs_version }}/ref/contrib/staticfiles/#django-admin-collectstatic):
     ```console
-    python -m pip install --find-links=/path/to/wheel_dir {{ project_name }}
+    python3 -m pip install --find-links=/path/to/wheel_dir {{ project_name }}
     django-project collectstatic --no-input
     ```
 7.  Start Gunicorn like this:
