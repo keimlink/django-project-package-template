@@ -105,5 +105,5 @@ Also see [How to use Django with Gunicorn](https://docs.djangoproject.com/en/{{ 
     ```
 7.  Start Gunicorn like this:
     ```console
-    gunicorn {{ project_name }}.conf.wsgi
+    gunicorn {{ project_name }}.wsgi
     ```
