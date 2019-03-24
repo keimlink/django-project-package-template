@@ -38,7 +38,7 @@ A testbed to quickly test the project template can be found in the separate [dja
 
 ## License
 
-Distributed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
+Distributed under the [MIT License](https://opensource.org/licenses/MIT).
 
 Copyright 2018-2019 Markus Zapke-Gründemann
 
