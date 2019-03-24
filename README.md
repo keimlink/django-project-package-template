@@ -40,7 +40,7 @@ A testbed to quickly test the project template can be found in the separate [dja
 
 Distributed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
 
-Copyright (c) 2018, Markus Zapke-Gründemann
+Copyright 2018-2019 Markus Zapke-Gründemann
 
 _All text below the horizontal line is the template for the new project's README._
 
