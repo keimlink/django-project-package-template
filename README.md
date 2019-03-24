@@ -57,8 +57,9 @@ Install the project and the development dependencies into a [virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip setuptools wheel
-python3 -m pip install --editable .[dev]
+python3 -m pip install --editable ".[dev]"
 ./manage.py migrate
+./manage.py createsuperuser
 ./manage.py runserver
 ```
 
